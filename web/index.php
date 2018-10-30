@@ -4,7 +4,7 @@
  <title>LED Control</title>
  </head>
          <body>
-         Torsteuerung
+         Torsteuerung wadu
          <form method="get" action="index.php">
                  <input type="submit" value="ON" name="on">
 
