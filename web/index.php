@@ -12,8 +12,9 @@
          <?php
 
    
-shell_exec("/home/pi/raspberry/temp_control.py");
-        
+$out = shell_exec("/home/pi/raspberry/temp_control.py");
+echo "temp:";
+echo $out;        
 
          ?>
          </body>
