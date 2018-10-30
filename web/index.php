@@ -11,19 +11,9 @@
          </form>
          <?php
 
-         $setmode17 = shell_exec("/usr/local/bin/gpio -g mode 4 out");
-         if(isset($_GET['on'])){
-                 $gpio_on = shell_exec("/usr/local/bin/gpio -g write 4 0");
-                 echo "Tor aktiviert!";
-
-                SLEEP(1);
-shell_exec("/usr/local/bin/gpio -g write 4 1");
-
-
-
-
-
-         }
+   
+shell_exec("/home/pi/raspberry/temp_control.py");
+        
 
          ?>
          </body>
