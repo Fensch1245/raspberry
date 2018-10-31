@@ -11,10 +11,10 @@ def temp():
 	return temperature
 
 def main(argv):
-    print(get_value(*argv[1:]))
+    print(temp())
 
 if __name__ == "__main__":
     import sys
-    main(sys.argv)
+    main()
 
 
