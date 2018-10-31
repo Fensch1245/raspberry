@@ -1,13 +1,13 @@
 import sys
 import ConfigParser
 
-print "wadu"
+print "wadu1"
 
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
 result = config.get('DEFAULT', 'set_temp')
 
-
+print "wadu2"
 
 def set_temp():
 	return result
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     import sys
     main()
 
-print "hek"
+print "wadu3"
 
 
 
