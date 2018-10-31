@@ -5,7 +5,7 @@ import ch_config
 
 
 config = ConfigParser.ConfigParser()
-config.read('config.ini')
+config.read('/home/pi/raspberry/config.ini')
 
 print(config.get('DEFAULT', 'set_temp'))
 
