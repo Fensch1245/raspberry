@@ -18,7 +18,7 @@ if __name__ == "__main__":
     import sys
     main()
 
-print "wadu3"
+
 
 
 
