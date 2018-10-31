@@ -19,7 +19,7 @@ echo "<br/>";
 echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
 
-$wadu = exec('sudo python /home/pi/raspberry/get_config.py');
+echo exec('sudo python /home/pi/raspberry/get_config.py');
 
 echo $wadu;
          ?>
