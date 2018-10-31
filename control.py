@@ -3,7 +3,7 @@ import get_info
 import ConfigParser
 
 
-config = configparser.ConfigParser()
+config = ConfigParser.ConfigParser()
 config.read('config.ini')
 
 print(config['set']['temp'])
