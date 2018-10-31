@@ -14,10 +14,9 @@ echo "<br/>";
 $test = $_POST['idtest'];
 echo $test;
 
-
 if (isset($_POST['update']))
 {
-    echo exec('python ch_config.py DEFAULT set_temp 420');
+    echo exec('python ch_config.py DEFAULT set_temp '".$test."'");
 }
 
          ?>
