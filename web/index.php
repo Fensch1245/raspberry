@@ -13,7 +13,7 @@ echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
 $test = $_POST['idtest'];
 echo $test;
-shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp $test');
+shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp $test 2>&1');
 
 
          ?>
