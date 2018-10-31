@@ -1,8 +1,6 @@
 import sys
-import get_temp
+import get_info
 
-
-
-print get_temp.get_temp()
+print get_info.temp()
 
 
