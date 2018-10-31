@@ -6,7 +6,7 @@ import ConfigParser
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
 
-print(config['set']['temp'])
+print(config['DEFAULT']['set_temp'])
 
 print get_info.temp()
 
