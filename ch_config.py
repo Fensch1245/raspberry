@@ -4,6 +4,6 @@ import ConfigParser
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
 
-config.set('DEFAULT', 'set_temp', 25)
+config.set('DEFAULT', 'set_temp', '25')
 
 
