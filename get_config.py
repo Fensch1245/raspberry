@@ -6,7 +6,7 @@ config = ConfigParser.ConfigParser()
 config.read('config.ini')
 print "wadu"
 result = config.get('DEFAULT', 'set_temp')
-
+print "wadu2"
 
 
 def set_temp():
