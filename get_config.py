@@ -1,6 +1,7 @@
 import sys
 import ConfigParser
-
+import os  
+os.environ['PYTHON_EGG_CACHE'] = '/tmp' # a writable directory 
 
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
