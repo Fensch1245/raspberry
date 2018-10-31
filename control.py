@@ -10,7 +10,7 @@ print(config.get('DEFAULT', 'set_temp'))
 
 ch_config.update_val('DEFAULT', 'set_temp', '25')
 
-print get_info.temp()
+#print get_info.temp()
 
 
 
