@@ -1,6 +1,6 @@
 import sys
 import get_info
-import configparser
+import ConfigParser
 
 
 config = configparser.ConfigParser()
