@@ -9,5 +9,6 @@ config.read('config.ini')
 
 
 config.set('DEFAULT', 'set_temp', '25')
-config.write()
 
+with open("properties.ini", "w+") as configfile:
+	config.write(configfile)
