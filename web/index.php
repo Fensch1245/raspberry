@@ -7,7 +7,7 @@
 
          <form method="get" action="index.php">
 			<input type="text" name="input_value">
-            <input type="submit" name="Speichern" value=input_value>
+            <input type="submit" name=input_value value="Speichern">
 
          </form>
   
