@@ -11,11 +11,12 @@ echo "Aktuell gemessene Temperatur:";
 echo "<br/>"; 
 echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
-$test = $_POST['idtest'];
-echo $test;
+
+
 if(isset($_POST['update']))
         {
-shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escapeshellarg($test));
+$temp = $_POST['idtest'];
+shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escapeshellarg($temp));
 echo "<meta http-equiv='refresh' content='0'>";
 }
 
