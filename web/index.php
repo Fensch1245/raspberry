@@ -7,7 +7,7 @@
 
          <form method="get" action="index.php">
 			<input type="text" name="input_value">
-            <input type="submit" value=input_value name="on">
+            <input type="submit" value=input_value>
 
          </form>
   
