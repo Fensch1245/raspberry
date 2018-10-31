@@ -14,6 +14,6 @@ echo "<br/>";
 $test = $_POST['idtest'];
 echo $test;
 shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escapeshellarg($test));
-
+echo "<meta http-equiv='refresh' content='0'>";
 
          ?>
