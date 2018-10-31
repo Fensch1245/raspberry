@@ -6,7 +6,8 @@
          <body>
 
          <form method="get" action="index.php">
-                 <input type="submit" value="wadu" name="on">
+			<input type="text" name="input_value">
+            <input type="submit" value=input_value name="on">
 
          </form>
   
