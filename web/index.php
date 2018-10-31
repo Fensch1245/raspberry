@@ -19,7 +19,8 @@ echo "<br/>";
 echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
 
-$wadu = "HEK";
+$wadu = exec('sudo python /home/pi/raspberry/get_config.py');
 
+echo $wadu;
          ?>
 </html>
