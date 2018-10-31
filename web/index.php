@@ -7,8 +7,8 @@ echo "<br/>";
 echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
 
-$output = shell_exec('sudo python /home/pi/raspberry/get_config.py 2>&1');
-echo "<pre>$output</pre>";
+exec('sudo python /home/pi/raspberry/get_config.py 2>&1');
+
 
 
 echo "<br/>"; 
