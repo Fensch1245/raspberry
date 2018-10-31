@@ -1,7 +1,7 @@
 <html>
 <form name="update" method="post" >
 	<input type="text" name="idtest" value="<?php echo exec('sudo python /home/pi/raspberry/get_config.py'); ?>" />
-    <button name = "update" type="submit"> Update charts </button>
+    <button name = "update" type="submit">Speichern</button>
 </form>
 </html>
 		 
