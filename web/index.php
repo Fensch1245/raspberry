@@ -13,9 +13,9 @@ echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
 $test = $_POST['idtest'];
 echo $test;
-echo exec('python ch_config.py DEFAULT set_temp 30');
+exec('sudo python ch_config.py DEFAULT set_temp 30');
 
-echo exec('python ch_config.py DEFAULT set_temp $test');
+echo exec('sudo python ch_config.py DEFAULT set_temp $test');
 
 
          ?>
