@@ -16,7 +16,7 @@ echo $test;
 
 if (isset($_POST['update']))
 {
-    echo exec('python ch_config.py DEFAULT set_temp '".$test."'");
+    echo exec('python ch_config.py DEFAULT set_temp $test');
 }
 
          ?>
