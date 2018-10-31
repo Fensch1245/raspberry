@@ -14,7 +14,7 @@ echo exec('sudo python /home/pi/raspberry/get_config.py');
 
 if (isset($_POST['update']))
 {
-    exec('sudo python /home/pi/raspberry/control.py');
+    echo exec('sudo python /home/pi/raspberry/control.py');
 }
 
          ?>
