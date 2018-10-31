@@ -17,7 +17,7 @@ echo "<meta http-equiv='refresh' content='0'>";
 
 <html>
 <form name="update" method="post" >
-	Eingestellte Temperatur:
+	Eingestellte Temperatur: </br>
 	<input type="text" name="idtest" value="<?php echo exec('sudo python /home/pi/raspberry/get_config.py'); ?>" />
     <button name = "update" type="submit">Speichern</button>
 </form>
