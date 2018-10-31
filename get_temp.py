@@ -10,6 +10,6 @@ humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 def get_temp():
 	return temperature
 
-print temperature
+
 
 
