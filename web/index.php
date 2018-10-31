@@ -2,13 +2,12 @@
 <html>
 <body>
 
-<form name='form' method='post' action="index.php">
 
 Name: <input type="text" name="name" id="name" ><br/>
 
 <input type="submit" name="submit" value="Submit">  
 
-</form>
+
 </body>
 </html>
 
