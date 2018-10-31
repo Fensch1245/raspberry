@@ -1,12 +1,5 @@
 import sys
 import Adafruit_DHT
-import ConfigParser
-
-
-config = ConfigParser.ConfigParser()
-config.read('config.ini')
-
-print(config.get('DEFAULT', 'set_temp'))
 
 test = 47
 sensor = Adafruit_DHT.DHT11
