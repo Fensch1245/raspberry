@@ -6,7 +6,8 @@ os.environ['PYTHON_EGG_CACHE'] = '/tmp' # a writable directory
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
 print "wadu"
-result = config.get('DEFAULT', 'set_temp')
+#result = config.get('DEFAULT', 'set_temp')
+result = config.items('DEFAULT')
 print "wadu2"
 
 
