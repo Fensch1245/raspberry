@@ -11,7 +11,7 @@ result = config.get('DEFAULT', 'set_temp')
 def set_temp():
 	return result
 
-def main():
+def main(*argv):
     print(set_temp())
 
 if __name__ == "__main__":
