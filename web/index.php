@@ -11,11 +11,12 @@ echo "Aktuell gemessene Temperatur:";
 echo "<br/>"; 
 echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
-echo exec('sudo python /home/pi/raspberry/get_config.py');
+echo($_GET['idtest'])
+
 
 if (isset($_POST['update']))
 {
-    echo exec('sudo python /home/pi/raspberry/control.py');
+    echo exec('python ch_config.py DEFAULT set_temp 420');
 }
 
          ?>

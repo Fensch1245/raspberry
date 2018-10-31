@@ -12,5 +12,4 @@ def main():
 	with open("/home/pi/raspberry/config.ini", "w+") as configfile:
 		config.write(configfile)
 
-
 main()
