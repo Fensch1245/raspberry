@@ -7,7 +7,7 @@ echo "<br/>";
 echo exec('sudo python /home/pi/raspberry/get_info.py');
 echo "<br/>"; 
 
-$output = shell_exec('ls -lart');
+$output = shell_exec('/home/pi/raspberry/get_info.py');
 echo "<pre>$output</pre>";
 
 
