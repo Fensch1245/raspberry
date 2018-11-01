@@ -3,6 +3,7 @@
 echo "Aktuell gemessene Temperatur im Raum:";
 echo "<br/>"; 
 echo exec('sudo python /home/pi/raspberry/get_temp.py');
+echo " °C"
 echo "<br/>"; 
 echo "<br/>"; 
 
