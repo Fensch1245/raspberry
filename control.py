@@ -8,10 +8,10 @@ import requests
 page = requests.get('http://192.168.2.102/')
 tree = html.fromstring(page.content)
 
-print tree
+print tree.
 
 #This will create a list of buyers:
-buyers = tree.xpath('//div[@name="11"]/text()')
+buyers = tree.xpath('//*[@id="l1"]/text()')
 #This will create a list of prices
 prices = tree.xpath('//span[@class="item-price"]/text()')
 
