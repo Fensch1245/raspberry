@@ -1,6 +1,6 @@
  <?php
 		   
-echo "Aktuell gemessene Temperatur im Raum:";
+echo "<b>Aktuell gemessene Temperatur im Raum:</b>";
 echo "<br/>"; 
 echo exec('sudo python /home/pi/raspberry/get_temp.py');
 echo " °C";
