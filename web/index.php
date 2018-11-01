@@ -2,7 +2,7 @@
 		   
 echo "Aktuell gemessene Temperatur im Raum:";
 echo "<br/>"; 
-echo exec('sudo python /home/pi/raspberry/get_info.py');
+echo exec('sudo python /home/pi/raspberry/get_temp.py');
 echo "<br/>"; 
 echo "<br/>"; 
 
