@@ -1,3 +1,5 @@
+#     python  ch_config.py section option newvalue
+
 import sys
 import ConfigParser
 

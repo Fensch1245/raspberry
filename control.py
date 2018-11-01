@@ -2,11 +2,9 @@ import sys
 import get_info
 import ConfigParser
 import ch_config
+import os
 
-
-config = ConfigParser.ConfigParser()
-config.read('/home/pi/raspberry/config.ini')
-ch_config.update_val('DEFAULT', 'set_temp', '25')
+os.system("/home/pi/raspberry/ch_config.py DEFAULT set_temp 69")
 
 
 
