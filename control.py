@@ -11,7 +11,7 @@ tree = html.fromstring(page.content)
 
 
 #This will create a list of buyers:
-buyers = tree.xpath('//*[@id="l1"]/following::table[2]')
+buyers = tree.xpath('//*[@id="l1"]/text()')
 #This will create a list of prices
 prices = tree.xpath('//span[@class="item-price"]/text()')
 
