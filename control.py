@@ -21,7 +21,7 @@ tree = html.fromstring(page.content)
 # print 'Buyers: ', buyers
 # print 'Prices: ', prices
 
-
+import selenium
 from selenium import webdriver
 
 browser = webdriver.Firefox()
