@@ -11,7 +11,7 @@ tree = html.fromstring(page.content)
 
 
 #This will create a list of buyers:
-buyers = tree.xpath('/html/body/div/div[2]')
+buyers = tree.xpath('//*[@id="l1"]')
 text = buyers.textContent
 
 
