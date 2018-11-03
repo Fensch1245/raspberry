@@ -26,7 +26,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.binary_location = r"/usr/lib/chromium-browser/"
+options.binary_location = r"/usr/lib/chromium-browser/chromium-browser"
 options.add_argument("start-maximized")
 options.add_argument("--remote-debugging-port=9222")
 
