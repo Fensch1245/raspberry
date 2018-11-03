@@ -37,7 +37,7 @@ binary = FirefoxBinary('/usr/lib/firefox-esr/')
 
 cap = DesiredCapabilities().FIREFOX
 cap["marionette"] = False		
-driver = webdriver.Firefox(firefox_binary=binary, capabilities=cap, executable_path="/home/pi/geckodriver")
+driver = webdriver.Firefox(capabilities=cap, executable_path="/home/pi/geckodriver")
 driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
 # element = driver.find_element_by_class_name("pull-right")
 # or the following below 
