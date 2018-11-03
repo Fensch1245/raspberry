@@ -35,7 +35,7 @@ capabilities = DesiredCapabilities.firefox()
 
 capabilities.setCapability("marionette", true)
 
-webdriver.driver = new FirefoxDriver(capabilities)
+webdriver.driver = new Firefox(capabilities)
 		
 driver = webdriver.Firefox(executable_path="/home/pi/geckodriver")
 driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
