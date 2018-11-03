@@ -38,14 +38,25 @@ binary = FirefoxBinary('/usr/lib/firefox-esr/firefox-bin')
 cap = DesiredCapabilities().FIREFOX
 cap["marionette"] = False		
 driver = webdriver.Firefox(firefox_binary=binary, capabilities=cap, executable_path="/home/pi/geckodriver")
-driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
+driver.get("http://python.org")
+
+assert "Python" in driver.title
+elem = driver.find_element_by_name("q")
+elem.clear()
+elem.send_keys("pycon")
+elem.send_keys(Keys.RETURN)
+assert "No results found." not in driver.page_source
+driver.close()
+
+
+
 # element = driver.find_element_by_class_name("pull-right")
 # or the following below 
 # element = driver.find_element_by_name("q")
 # element = driver.find_element_by_id("html ID name")
 # element = driver.find_element_by_name("html element name")
-element = driver.find_element_by_xpath("//input[@id='passwd-id']")
-print(element)
-driver.close()
+#element = driver.find_element_by_xpath("//input[@id='passwd-id']")
+#print(element)
+#driver.close()
 
 
