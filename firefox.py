@@ -41,7 +41,13 @@ driver = webdriver.Firefox( capabilities=cap, executable_path="/home/pi/geckodri
 driver.get("http://python.org")
 
 
-
+assert "Python" in driver.title
+elem = driver.find_element_by_name("q")
+elem.clear()
+elem.send_keys("pycon")
+elem.send_keys(Keys.RETURN)
+assert "No results found." not in driver.page_source
+driver.close()
 
 
 #element = driver.find_element_by_class_name("pull-right")
@@ -49,8 +55,9 @@ driver.get("http://python.org")
 #element = driver.find_element_by_name("q")
 # element = driver.find_element_by_id("html ID name")
 # element = driver.find_element_by_name("html element name")
-element = driver.find_element_by_xpath("//*[@id='content']/div/section/div[2]/div[2]/p[2]/a")
-print(element)
-driver.close()
+
+#element = driver.find_element_by_xpath("//*[@id='content']/div/section/div[2]/div[2]/p[2]/a")
+#print(element)
+#driver.close()
 
 
