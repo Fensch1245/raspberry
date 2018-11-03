@@ -33,7 +33,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 binary = FirefoxBinary('/home/pi/geckodriver')
-driver = webdriver.Firefox(firefox_binary=binary)
+
 
 cap = DesiredCapabilities().FIREFOX
 cap["marionette"] = False		
