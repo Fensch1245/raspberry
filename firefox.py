@@ -39,7 +39,7 @@ binary = FirefoxBinary('/usr/lib/firefox-esr/firefox-bin')
 #cap["marionette"] = False		
 #driver = webdriver.Firefox( capabilities=cap, executable_path="/home/pi/geckodriver")
 driver = webdriver.Firefox(firefox_binary=binary, executable_path="/home/pi/gecko/geckodriver")
-driver.get("http://python.org")
+driver.get("http://192.168.2.102/")
 
 
 #element = driver.find_element_by_class_name("pull-right")
@@ -48,7 +48,7 @@ driver.get("http://python.org")
 # element = driver.find_element_by_id("html ID name")
 # element = driver.find_element_by_name("html element name")
 
-element = driver.find_element_by_xpath("//*[@id='content']/div/section/div[2]/div[2]/p[2]/a")
+element = driver.find_element_by_xpath("//*[@id='l1']")
 print(element)
 driver.close()
 
