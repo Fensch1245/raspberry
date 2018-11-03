@@ -29,15 +29,11 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-capabilities = DesiredCapabilities.firefox()
-
-
-capabilities.setCapability("marionette", true)
-
-webdriver.driver = new Firefox(capabilities)
-		
-driver = webdriver.Firefox(executable_path="/home/pi/geckodriver")
+cap = DesiredCapabilities().FIREFOX
+cap["marionette"] = False		
+driver = webdriver.Firefox(capabilities=cap, executable_path="/home/pi/geckodriver")
 driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
 # element = driver.find_element_by_class_name("pull-right")
 # or the following below 
