@@ -30,9 +30,12 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-DesiredCapabilities capabilities = DesiredCapabilities.firefox():
-        capabilities.setCapability("marionette", true)
-        WebDriver driver = new FirefoxDriver(capabilities)
+DesiredCapabilities capabilities = DesiredCapabilities.firefox()
+
+
+capabilities.setCapability("marionette", true)
+
+WebDriver driver = new FirefoxDriver(capabilities)
 		
 driver = webdriver.Firefox(executable_path="/home/pi/geckodriver")
 driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
