@@ -23,11 +23,16 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.binary_location("/usr/lib/chromium-browser/chromium-browser") 
+options.add_argument("start-maximized")
+options.add_argument("--remote-debugging-port=9222")
 
 
 
-
-driver = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver")
+driver = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver", chrome_options=options)
 driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
 # element = driver.find_element_by_class_name("pull-right")
 # or the following below 
