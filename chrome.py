@@ -26,7 +26,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.binary_location = r"/usr/lib/chromium-browser/chromium-browser"
+options.binary_location = r"/usr/lib/chromium-browser/chromedriver"
 
 
 
