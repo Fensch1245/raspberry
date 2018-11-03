@@ -24,7 +24,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Firefox(executable_path="/home/pi/geckodriver")
+driver = webdriver.Chrome(executable_path=r"/usr/local/bin/chromedriver")
 driver.get("https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Star_Wars:_The_Last_Jedi")
 # element = driver.find_element_by_class_name("pull-right")
 # or the following below 
