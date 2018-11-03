@@ -30,7 +30,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-DesiredCapabilities capabilities = DesiredCapabilities.firefox()
+DesiredCapabilities.capabilities = DesiredCapabilities.firefox()
 
 
 capabilities.setCapability("marionette", true)
