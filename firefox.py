@@ -49,7 +49,7 @@ driver.get("http://192.168.2.102/")
 # element = driver.find_element_by_name("html element name")
 
 element = driver.find_element_by_xpath("//*[@id='l1']")
-print(element.text_content())
+print(element.textContent)
 driver.close()
 
 
