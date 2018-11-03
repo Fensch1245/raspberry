@@ -35,10 +35,10 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 binary = FirefoxBinary('/usr/lib/firefox-esr/firefox-bin')
 
 
-cap = DesiredCapabilities().FIREFOX
-cap["marionette"] = False		
-driver = webdriver.Firefox(firefox_binary=binary, capabilities=cap, executable_path="/home/pi/geckodriver")
-driver.get("http://python.org")
+# cap = DesiredCapabilities().FIREFOX
+# cap["marionette"] = False		
+# driver = webdriver.Firefox(firefox_binary=binary, capabilities=cap, executable_path="/home/pi/geckodriver")
+# driver.get("http://python.org")
 
 assert "Python" in driver.title
 elem = driver.find_element_by_name("q")
