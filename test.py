@@ -27,7 +27,7 @@ else:
 	status = 1
 
 
-
+print status
 
 	#http://192.168.2.102/cm?cmnd=status
 	
