@@ -2,14 +2,16 @@ import sys
 import get_info
 import ConfigParser
 import os
-from lxml import html
-import requests
+# from lxml import html
+# import requests
 
-page = requests.get('http://192.168.2.102/ay')
-tree = html.fromstring(page.content)
+# page = requests.get('http://192.168.2.102/ay')
+# tree = html.fromstring(page.content)
 
-
-print(tree.text())
+import urllib2
+contents = urllib2.urlopen("http://192.168.2.102/ay").read()
+print(contents)
+# print(tree.text())
 
 
 #import requests
