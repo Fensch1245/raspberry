@@ -22,9 +22,9 @@ http = urllib3.PoolManager()
 r = http.request('GET', 'http://192.168.2.102/cm?cmnd=Power')
 
 if 'OFF' in r.data:
-	print "Ausgeschaltet"
+	status = 0
 else:
-	print "Eingeschaltet"
+	status = 1
 
 
 
