@@ -41,7 +41,7 @@ binary = FirefoxBinary('/usr/lib/firefox-esr/firefox-bin')
 driver = webdriver.Firefox(firefox_binary=binary, executable_path="/home/pi/gecko/geckodriver")
 driver.get("http://192.168.2.102/ay")
 
-
+print driver.page_source.encode("utf-8")
 
 #element = driver.find_element_by_class_name("pull-right")
 #or the following below 
@@ -49,8 +49,8 @@ driver.get("http://192.168.2.102/ay")
 # element = driver.find_element_by_id("html ID name")
 # element = driver.find_element_by_name("html element name")
 
-element = driver.find_element_by_xpath("//table/tr/td").text()
-print(element)
+#element = driver.find_element_by_xpath("//table/tr/td").text()
+#print(element)
 driver.close()
 
 
