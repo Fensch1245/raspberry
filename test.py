@@ -22,4 +22,4 @@ http = urllib3.PoolManager()
 r = http.request('GET', 'http://192.168.2.102/ay')
 
 with open('page_source.html', 'w') as fid:
-    fid.write(r.data)
+    print(r.data)
