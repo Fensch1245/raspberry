@@ -26,9 +26,10 @@ if 'OFF' in r.data:
 else:
 	status = 1
 
-
 print status
 
 	#http://192.168.2.102/cm?cmnd=status
 	
 	#http://192.168.2.102/cm?cmnd=Power
+	
+	#https://github.com/arendst/Sonoff-Tasmota/wiki/Commands#logging

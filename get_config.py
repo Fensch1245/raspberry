@@ -1,7 +1,6 @@
 import sys
 import ConfigParser
 
-
 config = ConfigParser.ConfigParser()
 config.read('/home/pi/raspberry/config.ini')
 result = config.get('DEFAULT', 'set_temp')
