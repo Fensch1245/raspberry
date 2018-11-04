@@ -9,7 +9,7 @@ import os
  
 import urllib3
 http = urllib3.PoolManager()
-r = http.request('GET', 'http://httpbin.org/robots.txt')
+r = http.request('GET', 'http://192.168.2.102/ay')
 r.status
 print(r.status)
 r.data
