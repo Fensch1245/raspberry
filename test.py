@@ -19,7 +19,11 @@ import os
  
 import urllib3
 http = urllib3.PoolManager()
-r = http.request('GET', 'http://192.168.2.102/ay')
+r = http.request('GET', 'http://192.168.2.102/cm?cmnd=Power')
 
 with open('page_source.html', 'w') as fid:
     print(r.data)
+	
+	#http://192.168.2.102/cm?cmnd=status
+	
+	#http://192.168.2.102/cm?cmnd=Power
