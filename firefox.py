@@ -41,7 +41,7 @@ binary = FirefoxBinary('/usr/lib/firefox-esr/firefox-bin')
 driver = webdriver.Firefox(firefox_binary=binary, executable_path="/home/pi/gecko/geckodriver")
 driver.get("http://192.168.2.102/ay")
 
-print(driver.
+
 
 #element = driver.find_element_by_class_name("pull-right")
 #or the following below 
