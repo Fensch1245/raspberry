@@ -8,8 +8,8 @@ import os
 # page = requests.get('http://192.168.2.102/ay')
 # tree = html.fromstring(page.content)
 
-import urllib2
-contents = urllib2.urlopen("http://192.168.2.102/ay").read()
+import urllib3
+contents = urllib3.urlopen("http://192.168.2.102/ay").read()
 print(contents)
 # print(tree.text())
 
