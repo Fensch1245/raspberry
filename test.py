@@ -21,7 +21,14 @@ import urllib3
 http = urllib3.PoolManager()
 r = http.request('GET', 'http://192.168.2.102/cm?cmnd=Power')
 
-print r.data
+if 'OFF' in r.data:
+	print "Ausgeschaltet"
+else:
+	print "Eingeschaltet"
+
+
+
+
 	#http://192.168.2.102/cm?cmnd=status
 	
 	#http://192.168.2.102/cm?cmnd=Power
