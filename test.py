@@ -2,8 +2,15 @@ import sys
 import get_info
 import ConfigParser
 import os
-import requests
+#import requests
 
-r = requests.get('http://192.168.2.102/ay')
-print(r.text)
+#r = requests.get('http://192.168.2.102/ay')
+#print(r.text)
  
+import urllib3
+http = urllib3.PoolManager()
+r = http.request('GET', 'http://httpbin.org/robots.txt')
+r.status
+print(r.status)
+r.data
+print(r.data)
