@@ -8,9 +8,7 @@ import os
 # page = requests.get('http://192.168.2.102/ay')
 # tree = html.fromstring(page.content)
 
-import urllib3
-contents = urllib3.urlopen("http://192.168.2.102/ay").read()
-print(contents)
+
 # print(tree.text())
 
 
@@ -19,10 +17,9 @@ print(contents)
 #r = requests.get('http://192.168.2.102/ay')
 #print(r.text)
  
-# import urllib3
-# http = urllib3.PoolManager()
-# r = http.request('GET', 'http://192.168.2.102/ay')
-# r.status
-# print(r.status)
-# r.data
-# print(r.data)
+import urllib3
+http = urllib3.PoolManager()
+r = http.request('GET', 'http://192.168.2.102/ay')
+
+with open('page_source.html', 'w') as fid:
+    fid.write(r.data)
