@@ -22,9 +22,11 @@ http = urllib3.PoolManager()
 
 http.request('GET', 'http://192.168.2.123/cm?cmnd=Power%20toggle')
 
+state = http.request('GET', 'http://192.168.2.123/cm?cmnd=Power')
 
-	#http://192.168.2.102/cm?cmnd=status
+if 'OFF' in state.data:
+	status = 0
+else:
+	status = 1
 	
-	#http://192.168.2.102/cm?cmnd=Power
-	
-	#https://github.com/arendst/Sonoff-Tasmota/wiki/Commands#logging
+print status
