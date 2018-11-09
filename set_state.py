@@ -23,8 +23,6 @@ http = urllib3.PoolManager()
 http.request('GET', 'http://192.168.2.123/cm?cmnd=Power%20toggle')
 
 
-print status
-
 	#http://192.168.2.102/cm?cmnd=status
 	
 	#http://192.168.2.102/cm?cmnd=Power
