@@ -2,7 +2,7 @@ import sys
 import get_info
 import ConfigParser
 import os
-import webbrowser
+
 # from lxml import html
 # import requests
 
@@ -19,9 +19,10 @@ import webbrowser
 #print(r.text)
  
 import urllib3
+import urllib2
 http = urllib3.PoolManager()
 
-webbrowser.open('http://192.168.2.123/cm?cmnd=Power%20toggle')
+urllib2.urlopen('http://192.168.2.123/cm?cmnd=Power%20toggle')
 
 #http.request('GET', 'http://192.168.2.123/cm?cmnd=Power%20toggle')
 
