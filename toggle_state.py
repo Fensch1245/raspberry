@@ -22,9 +22,9 @@ import urllib3
 import urllib2
 http = urllib3.PoolManager()
 
-urllib2.urlopen('http://192.168.2.123/cm?cmnd=Power%20toggle')
 
-#http.request('GET', 'http://192.168.2.123/cm?cmnd=Power%20toggle')
+
+http.request('GET', 'http://192.168.2.123/cm?cmnd=Power%20toggle')
 
 state = http.request('GET', 'http://192.168.2.123/cm?cmnd=Power')
 
