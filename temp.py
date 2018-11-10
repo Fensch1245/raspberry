@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from si7021 import Si7021
 from time import sleep
 from smbus import SMBus
