@@ -11,4 +11,4 @@ count = 0
 while count < 5:
 	val = get_temp.ret_val()
 	print val
-	time.sleep(0.5)
+	time.sleep(2)
