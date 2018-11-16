@@ -34,11 +34,10 @@ celsTemp = round(celsTemp, 2)
 
 #print "Temperature in Fahrenheit is : %.2f F" %fahrTemp
 
-def temp():
-	return celsTemp
+
 
 def main():
-    print(temp())
+    print(celsTemp)
 
 if __name__ == "__main__":
     main()
