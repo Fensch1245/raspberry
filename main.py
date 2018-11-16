@@ -2,8 +2,7 @@
 
 import smbus
 import time
-import sys
-
+ 
 # Get I2C bus
 bus = smbus.SMBus(1)
 bus.write_byte(0x40, 0xF5)
@@ -31,16 +30,5 @@ fahrTemp = celsTemp * 1.8 + 32
 celsTemp = round(celsTemp, 2) 
 
 #print "Relative Humidity is : %.2f %%" %humidity
-
+print celsTemp
 #print "Temperature in Fahrenheit is : %.2f F" %fahrTemp
-
-def temp():
-	return celsTemp
-
-def main():
-    print(temp())
-
-if __name__ == "__main__":
-    import sys
-    main()
-
