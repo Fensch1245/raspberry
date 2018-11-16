@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+#!/bin/sh
+
 
 import smbus
 import time
