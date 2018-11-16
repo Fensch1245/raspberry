@@ -4,10 +4,11 @@ import get_temp
 import sys
 import time
 
+val = get_temp.ret_val()
+print val
 
 
-
-count = 0
+count = 1
 while count < 1:
 	val = get_temp.ret_val()
 	print val
