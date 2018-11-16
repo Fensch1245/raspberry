@@ -4,6 +4,6 @@ import get_temp
 
 import sys
 
-val = get_temp.main()
+val = get_temp.ret_val()
 
 print val
