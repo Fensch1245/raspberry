@@ -7,6 +7,6 @@ import time
 count = 0
 while count < 1:
 	import get_temp
-	returned_bin =  subprocess.check_output('get_temp.py'.split())
+	returned_bin =  subprocess.check_output('/home/pi/raspberry/get_temp.py'.split())
 	print returned_bin
 	time.sleep(2)
