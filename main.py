@@ -2,4 +2,3 @@
 
 import get_temp
 
-print get_temp
