@@ -6,6 +6,6 @@ import time
 
 count = 0
 while count < 1:
-	val = get_temp.main()
+	val = get_temp.ret_val()
 	print val
 	time.sleep(2)
