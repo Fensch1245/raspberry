@@ -36,9 +36,10 @@ celsTemp = round(celsTemp, 2)
 
 
 
-def main(arg):
+def main():
     print(celsTemp)
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    import sys
+    main()
 
