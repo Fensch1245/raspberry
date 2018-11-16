@@ -4,11 +4,8 @@ import get_temp
 import sys
 import time
 
-
-
 count = 0
 while count < 1:
-	val = get_temp.ret_val()
+	val = get_temp.main()
 	print val
-	del val
 	time.sleep(2)
