@@ -8,7 +8,7 @@ import time
 
 
 count = 0
-while count < 5:
+while count = 0:
 	val = get_temp.ret_val()
 	print val
 	time.sleep(2)
