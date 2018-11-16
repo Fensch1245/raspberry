@@ -7,5 +7,6 @@ import time
 count = 0
 while count < 1:
 	import get_temp
-	print get_temp.main()
+	returned_bin =  subprocess.check_output('get_temp.py'.split())
+	print returned_bin
 	time.sleep(2)
