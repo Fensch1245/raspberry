@@ -2,4 +2,4 @@
 
 import get_temp
 
-print get_temp.main()
+print get_temp
