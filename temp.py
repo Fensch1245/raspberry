@@ -27,7 +27,8 @@ data1 = bus.read_byte(0x40)
 # Convert the data and output it
 celsTemp = ((data0 * 256 + data1) * 175.72 / 65536.0) - 46.85
 fahrTemp = celsTemp * 1.8 + 32
- 
+celsTemp = round(celsTemp, 2) 
+
 #print "Relative Humidity is : %.2f %%" %humidity
 print celsTemp
 #print "Temperature in Fahrenheit is : %.2f F" %fahrTemp
