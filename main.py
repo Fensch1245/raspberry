@@ -10,5 +10,5 @@ count = 0
 while count < 1:
 	val = get_temp.ret_val()
 	print val
-	val.flush()
+	del val
 	time.sleep(2)
