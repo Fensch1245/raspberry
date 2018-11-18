@@ -4,8 +4,11 @@ import subprocess
 import sys
 import time
 import os
+import logging
 from decimal import Decimal
 from datetime import datetime
+
+logging.basicConfig(filename='log.log',level=logging.DEBUG)
 
 count = 0
 while count < 1:
@@ -31,10 +34,12 @@ while count < 1:
 	if state == 0:
 		if temp < (settemp - 2):
 			print 'Heizung aktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+			logging.info('Heizung aktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	else:
 		if temp > (settemp - 2):
 			print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+			logging.info('Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	
 	time.sleep(5)
