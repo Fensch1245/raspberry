@@ -16,7 +16,14 @@ while count < 1:
 	returned_settemp = os.linesep.join([s for s in returned_settemp.splitlines() if s])
 	settemp = Decimal(returned_settemp) #string in decimal verwandeln 
 	
+	
 	print 'Aktuelle Temperatur:', temp
-	print 'Eingestellte Temperatur:', returned_settemp	
+	print 'Eingestellte Temperatur:', settemp	
+	
+	if temp < (settemp - 2):
+		print 'Heizung aktivieren'
+	else:
+		print 'Heizung deaktivieren'
+	
 	time.sleep(1)
 	
