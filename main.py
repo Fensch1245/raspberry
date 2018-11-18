@@ -14,10 +14,11 @@ while count < 1:
 #	print val
 	returned_bin =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_temp.py'])
 	print returned_bin
-	if returned_bin > 23
-		print 'bigger'
-	else
-		print 'smaller'
+	print type(returned_bin)
+	# if returned_bin > 23
+		# print 'bigger'
+	# else
+		# print 'smaller'
 	
 	time.sleep(2)
 #	returned_bin =  subprocess.check_output('/home/pi/raspberry/get_temp.py'.split())
