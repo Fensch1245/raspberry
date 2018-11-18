@@ -13,7 +13,7 @@ while count < 1:
 #	val = get_temp.ret_val()
 #	print val
 	returned_bin =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_temp.py'])
-	returned_bin = os.linesep.join([s for s in text.splitlines() if s])
+	returned_bin = os.linesep.join([s for s in returned_bin.splitlines() if s])
 	
 	print returned_bin
 	print type(returned_bin)
