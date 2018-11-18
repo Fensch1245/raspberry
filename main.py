@@ -27,10 +27,12 @@ while count < 1:
 	print 'Eingestellte Temperatur:', settemp	
 	print 'Status der Heizung:', state
 	
-	if temp < (settemp - 2):
-		print 'Heizung aktiv'
+	if state == 0:
+		if temp < (settemp - 2):
+			os.system("toggle_state.py")
 	else:
-		print 'Heizung inaktiv'
+		if temp > (settemp - 2):
+			os.system("toggle_state.py")
 	
 	time.sleep(3)
 	
