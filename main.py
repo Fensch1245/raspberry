@@ -8,7 +8,7 @@ import logging
 from decimal import Decimal
 from datetime import datetime
 
-logging.basicConfig(filename='log.log',level=logging.DEBUG)
+logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
 
 count = 0
 while count < 1:
