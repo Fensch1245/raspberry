@@ -29,10 +29,10 @@ while count < 1:
 	
 	if state == 0:
 		if temp < (settemp - 2):
-			os.system("/home/pi/raspberry/toggle_state.py")
+			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	else:
 		if temp > (settemp - 2):
-			os.system("/home/pi/raspberry/toggle_state.py")
+			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	
 	time.sleep(3)
 	
