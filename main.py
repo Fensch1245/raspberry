@@ -5,7 +5,7 @@ import sys
 import time
 import os
 from decimal import Decimal
-from time import gmtime, strftime
+from datetime import datetime
 
 count = 0
 while count < 1:
@@ -30,11 +30,11 @@ while count < 1:
 	
 	if state == 0:
 		if temp < (settemp - 2):
-			print 'Heizung aktiviert um :', strftime("%Y-%m-%d %H:%M:%S", gmtime())
+			print 'Heizung aktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	else:
 		if temp > (settemp - 2):
-			print 'Heizung deaktiviert um :', strftime("%Y-%m-%d %H:%M:%S", gmtime())
+			print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	
 	time.sleep(5)
