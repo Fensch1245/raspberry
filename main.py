@@ -12,8 +12,10 @@ while count < 1:
 	returned_temp = os.linesep.join([s for s in returned_temp.splitlines() if s])
 	temp = Decimal(returned_temp) #string in decimal verwandeln
 	
+	returned_settemp =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config.py'])
+	
 	
 	print 'Aktuelle Temperatur:', temp
-		
-	time.sleep(2)
+	print 'Eingestellte Temperatur:', returned_settemp	
+	time.sleep(1)
 	
