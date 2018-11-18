@@ -21,9 +21,9 @@ while count < 1:
 	print 'Eingestellte Temperatur:', settemp	
 	
 	if temp < (settemp - 2):
-		print 'Heizung aktivieren'
+		print 'Heizung aktiv'
 	else:
-		print 'Heizung deaktivieren'
+		print 'Heizung inaktiv'
 	
-	time.sleep(1)
+	time.sleep(3)
 	
