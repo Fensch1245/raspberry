@@ -14,11 +14,6 @@ while count < 1:
 	
 	
 	print 'Aktuelle Temperatur:', temp
-	
-	if temp > 23:
 		
-	else:
-		
-	
 	time.sleep(2)
 	
