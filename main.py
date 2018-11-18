@@ -33,15 +33,13 @@ while count < 1:
 	
 	if state == 0:
 		if temp < (settemp - 2):
-			time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-			print type(time)
-			print 'Heizung aktiviert um :', time
-			logging.info('Heizung aktiviert um :', time)
+			print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+			logging.info('Heizung aktiviert')
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	else:
 		if temp > (settemp - 2):
 			print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-			logging.info('Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+			logging.info('Heizung deaktiviert')
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	
 	time.sleep(2)
