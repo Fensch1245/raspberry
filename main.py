@@ -4,19 +4,15 @@ import subprocess
 import sys
 import time
 import os
+from decimal import Decimal
 
 count = 0
 while count < 1:
-
-
-#	import get_temp
-#	val = get_temp.ret_val()
-#	print val
 	returned_bin =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_temp.py'])
 	returned_bin = os.linesep.join([s for s in returned_bin.splitlines() if s])
-	float(returned_bin)
-	print returned_bin
-	if returned_bin > 23:
+	temp = Decimal(returned_bin)
+	print temp
+	if temp > 23:
 		print 'bigger'
 	else:
 		print 'smaller'
