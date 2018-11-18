@@ -42,5 +42,5 @@ while count < 1:
 			logging.info('Heizung deaktiviert')
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	
-	time.sleep(2)
+	time.sleep(5)
 	
