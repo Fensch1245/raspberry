@@ -13,6 +13,7 @@ while count < 1:
 #	val = get_temp.ret_val()
 #	print val
 	returned_bin =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_temp.py'])
+	print returned_bin
 	time.sleep(2)
 #	returned_bin =  subprocess.check_output('/home/pi/raspberry/get_temp.py'.split())
 	
