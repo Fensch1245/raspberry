@@ -14,6 +14,7 @@ shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escap
 echo "<meta http-equiv='refresh' content='0'>";
 }
 
+include '/home/pi/raspberry/log.log';
  ?>
 
 <html>
