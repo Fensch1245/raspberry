@@ -19,17 +19,15 @@ import os
  
 import urllib3
 import urllib2
+
 http = urllib3.PoolManager()
-
-
-
 http.request('GET', 'http://192.168.2.123/cm?cmnd=Power%20toggle')
 
-state = http.request('GET', 'http://192.168.2.123/cm?cmnd=Power')
+# state = http.request('GET', 'http://192.168.2.123/cm?cmnd=Power')
 
-if 'OFF' in state.data:
-	status = 0
-else:
-	status = 1
+# if 'OFF' in state.data:
+	# status = 0
+# else:
+	# status = 1
 	
-print status
+# print status
