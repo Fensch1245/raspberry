@@ -1,5 +1,4 @@
 import sys
-import get_info
 import ConfigParser
 import os
 # from lxml import html
