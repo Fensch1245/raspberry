@@ -1,7 +1,7 @@
 
 <form>
 	</br>
-	<button name = "dellog" type="submit">Logdatei leeren</button>
+	<input name ="dellog" type="submit">Logdatei leeren</button>
 </form>
 <form action="http://192.168.2.200">
 	</br>
