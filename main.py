@@ -40,13 +40,20 @@ while count < 1:
 	else:
 		response_heizung = 0
 	
-	if activate_heater <> 0:
+	if activate_heater == 1:
+		if response_heizung == 0:
+			os.system("sudo python /home/pi/raspberry/ch_config.py DEFAULT activate_heater 0")
+			activate_heater = 0
+
+	if activate_heater == 1:
+		if response_heizung == 1:
 # Status der Heizung (Sonoff) auslesen	
-		returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
-		returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
-		state = Decimal(returned_state) #string in decimal verwandeln	
-		print 'Status der Heizung:', state
-		
+			returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
+			returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
+			state = Decimal(returned_state) #string in decimal verwandeln	
+			print 'Status der Heizung:', state
+
+
 	print ''
 	print 'Soll die Temperatur geloggt werden? ', log_temp
 	print 'Heizungssteuerung antwort: ', response_heizung	
@@ -58,7 +65,7 @@ while count < 1:
 		logging.info(temp)
 	
 	#Heizungssteuerung
-	if activate_heater <> 0:
+	if activate_heater == 1:
 		if state == 0:
 			if temp < (settemp - 2):
 				print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
