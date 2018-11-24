@@ -28,21 +28,13 @@ while count < 1:
 	returned_activateheater =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config_heater.py'])
 	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
-
-	#hostname = "192.168.2.123" #example
-	#response = os.system("sudo ping -c 1 " + hostname)
-
-	# if response == 0:
-		# print hostname, 'is up!'
-	# else:
-		# print hostname, 'is down!'
 	
 	r = pyping.ping('192.168.2.123')
 
 	if r.ret_code == 0:
-		print("Success")
+		response_heizung = 1
 	else:
-		print("Failed with {}".format(r.ret_code))
+		response_heizung = 0
 	
 	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
@@ -51,7 +43,7 @@ while count < 1:
 		state = Decimal(returned_state) #string in decimal verwandeln	
 		print 'Status der Heizung:', state
 		
-	#print 'Heizungssteuerung antwort: ', heizungssteuerung_response	
+	print 'Heizungssteuerung antwort: ', response_heizung	
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
 	print 'Soll die Heizung gesteuert werden?', activate_heater
