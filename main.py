@@ -30,7 +30,7 @@ while count < 1:
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 
 	hostname = "192.168.2.123" #example
-	response = os.system("ping -c 1 " + hostname)
+	response = os.system("sudo ping -c 1 " + hostname)
 
 	if response == 0:
 		print hostname, 'is up!'
