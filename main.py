@@ -7,7 +7,8 @@ import os
 import logging
 from decimal import Decimal
 from datetime import datetime
-import urllib.request
+import urllib3
+http = urllib3.PoolManager()
 
 logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
 
@@ -28,7 +29,7 @@ while count < 1:
 	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 
-	heizungssteuerung_response = urllib.request.urlopen("http://192.168.2.123").getcode()
+	heizungssteuerung_response = http.request.urlopen("http://192.168.2.123").getcode()
 	
 	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
