@@ -11,6 +11,8 @@ if(isset($_POST['update']))
         {
 $temp = $_POST['idtest'];
 shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escapeshellarg($temp));
+$heater = $_POST['heater'];
+shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escapeshellarg($heater));
 echo "<meta http-equiv='refresh' content='0'>";
 }
 
