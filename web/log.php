@@ -1,7 +1,5 @@
  <?php
 echo nl2br( file_get_contents('/home/pi/raspberry/log.log') );
- 
-include '/home/pi/raspberry/log.log';
  ?>
 
 <form action="http://192.168.2.200">
