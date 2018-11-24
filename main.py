@@ -9,8 +9,23 @@ from decimal import Decimal
 from datetime import datetime
 import pyping
 
-logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
+#logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
 
+def setup_logger(name, log_file, level=logging.INFO):
+    """Function setup as many loggers as you want"""
+
+    handler = logging.FileHandler(log_file)        
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
+
+templogger = setup_logger('temp_logger', 'temp.log')
+activitylogger = setup_logger('activity_logger', 'activity.log')
+	
 count = 0
 while count < 1:
 # Aktuelle Temperatur des Raumes auslesen
@@ -57,7 +72,7 @@ while count < 1:
 	print 'Eingestellte Temperatur:', settemp	
 	
 	if log_temp == 1:
-		logging.info(temp)
+		templogger.info(temp)
 	
 	#Heizungssteuerung
 	if response_heizung == 1:
@@ -65,12 +80,12 @@ while count < 1:
 			if state == 0:
 				if temp < (settemp - 2):
 					print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-					logging.info('Heizung aktiviert')
+					activitylogger.info('Heizung aktiviert')
 					os.system("sudo python /home/pi/raspberry/toggle_state.py")
 			else:
 				if temp > (settemp - 2):
 					print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-					logging.info('Heizung deaktiviert')
+					activitylogger.info('Heizung deaktiviert')
 					os.system("sudo python /home/pi/raspberry/toggle_state.py")
 		else:
 			if response_heizung == 1:
@@ -79,7 +94,7 @@ while count < 1:
 				state = Decimal(returned_state) #string in decimal verwandeln	
 				if state == 1:
 					print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-					logging.info('Heizung deaktiviert')
+					activitylogger.info('Heizung deaktiviert')
 					os.system("sudo python /home/pi/raspberry/toggle_state.py")
 				
 	
