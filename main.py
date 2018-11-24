@@ -29,6 +29,11 @@ while count < 1:
 	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 	
+#Aus Config auslesen ob Temperatur geloggt werden soll
+	returned_logtemp =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config.py', 'log_temp'])
+	returned_logtemp = os.linesep.join([s for s in returned_logtemp.splitlines() if s])
+	log_temp = Decimal(returned_logtemp) #string in decimal verwandeln 
+
 	r = pyping.ping('192.168.2.123')
 
 	if r.ret_code == 0:
@@ -43,6 +48,7 @@ while count < 1:
 		state = Decimal(returned_state) #string in decimal verwandeln	
 		print 'Status der Heizung:', state
 		
+	print 'Soll die Temperatur geloggt werden? ', log_temp
 	print 'Heizungssteuerung antwort: ', response_heizung	
 	print 'Soll die Heizung gesteuert werden: ', activate_heater
 	print 'Aktuelle Temperatur:', temp

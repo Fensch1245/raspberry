@@ -19,6 +19,13 @@ $heater = $_POST['heater'];
 shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT activate_heater '.escapeshellarg($heater));
 echo "<meta http-equiv='refresh' content='0'>";
 }
+
+if(isset($_POST['update2']))
+        {
+$logtemp = $_POST['logtemp'];
+shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT activate_heater '.escapeshellarg($logtemp));
+echo "<meta http-equiv='refresh' content='0'>";
+}
  ?>
 
 <html>
@@ -31,6 +38,12 @@ echo "<meta http-equiv='refresh' content='0'>";
 	<b> Heizungsstauerung aktiv: </b> </br>
 	<input type="text" name="heater" value="<?php echo exec('sudo python /home/pi/raspberry/get_config_heater.py'); ?>" />
 	<button name = "update1" type="submit">Speichern</button>
+	
+	</br></br>
+	<b> Temperatur loggen: </b> </br>
+	<input type="text" name="logtemp" value="<?php echo exec('sudo python /home/pi/raspberry/get_config.py log_temp'); ?>" />
+	<button name = "update2" type="submit">Speichern</button>
+	
 </form>
 
 <form action="http://192.168.2.200/log.php">
