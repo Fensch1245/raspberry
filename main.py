@@ -44,9 +44,10 @@ while count < 1:
 		print 'Status der Heizung:', state
 		
 	print 'Heizungssteuerung antwort: ', response_heizung	
+	print 'Soll die Heizung gesteuert werden?', activate_heater
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
-	print 'Soll die Heizung gesteuert werden?', activate_heater
+	
 	
 	if activate_heater <> 0:
 		if state == 0:
@@ -59,7 +60,14 @@ while count < 1:
 				print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 				logging.info('Heizung deaktiviert')
 				os.system("sudo python /home/pi/raspberry/toggle_state.py")
-
-			
+	else:
+		if response_heizung == 1:
+			returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
+			returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
+			state = Decimal(returned_state) #string in decimal verwandeln	
+			if state == 1:
+				os.system("sudo python /home/pi/raspberry/toggle_state.py")
+				
+	
 	time.sleep(5)
 	
