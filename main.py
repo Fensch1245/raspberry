@@ -50,7 +50,7 @@ while count < 1:
 			print 'Status der Heizung:', state
 
 
-	print ''
+	print 'Update: ', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 	print 'Soll die Temperatur geloggt werden? ', log_temp
 	print 'Heizungssteuerung antwort: ', response_heizung	
 	print 'Soll die Heizung gesteuert werden: ', activate_heater
