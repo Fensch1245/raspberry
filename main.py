@@ -29,14 +29,13 @@ while count < 1:
 	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 
-	try:
-		request = requests.get('http://192.168.2.123')
-	except ConnectionError:
-		heizungssteuerung_response = "Inaktiv"
-	else:
-		heizungssteuerung_response = "Aktiv"
-	
+	hostname = "192.168.2.123" #example
+	response = os.system("ping -c 1 " + hostname)
 
+	if response == 0:
+		print hostname, 'is up!'
+	else:
+		print hostname, 'is down!'
 	
 	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
