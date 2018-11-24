@@ -7,9 +7,8 @@ import os
 import logging
 from decimal import Decimal
 from datetime import datetime
-import requests
-from requests.exceptions import ConnectionError
 import pyping
+
 logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
 
 count = 0
@@ -48,6 +47,7 @@ while count < 1:
 		state = Decimal(returned_state) #string in decimal verwandeln	
 		print 'Status der Heizung:', state
 		
+	print ''
 	print 'Soll die Temperatur geloggt werden? ', log_temp
 	print 'Heizungssteuerung antwort: ', response_heizung	
 	print 'Soll die Heizung gesteuert werden: ', activate_heater
