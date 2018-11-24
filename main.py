@@ -48,6 +48,8 @@ while count < 1:
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
 	
+	logging.info('Gemessene Temperatur: ', temp)
+	
 	#Heizungssteuerung
 	if activate_heater <> 0:
 		if state == 0:
