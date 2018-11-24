@@ -27,7 +27,7 @@ echo "<meta http-equiv='refresh' content='0'>";
 	<input type="text" name="idtest" value="<?php echo exec('sudo python /home/pi/raspberry/get_config.py'); ?>" />
 	<button name = "update" type="submit">Speichern</button>
 	
-	</br>
+	</br></br>
 	<b> Heizungsstauerung aktiv: </b> </br>
 	<input type="text" name="heater" value="<?php echo exec('sudo python /home/pi/raspberry/get_config_heater.py'); ?>" />
 	<button name = "update1" type="submit">Speichern</button>
