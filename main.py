@@ -33,6 +33,9 @@ while count < 1:
 		returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
 		state = Decimal(returned_state) #string in decimal verwandeln	
 		print 'Status der Heizung:', state
+	else:
+		state = 1
+		
 		
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
@@ -52,7 +55,7 @@ while count < 1:
 	else:
 		if state == 1:
 			os.system("sudo python /home/pi/raspberry/toggle_state.py")
-			
+			state = 0
 			
 	time.sleep(5)
 	
