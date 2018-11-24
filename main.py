@@ -21,15 +21,22 @@ while count < 1:
 	returned_settemp =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config.py'])
 	returned_settemp = os.linesep.join([s for s in returned_settemp.splitlines() if s])
 	settemp = Decimal(returned_settemp) #string in decimal verwandeln 
+	
+# Aus Config auslesen ob Heater gesteuert werden soll
+	returned_activateheater =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config_heater.py'])
+	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
+	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 
+	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
-	returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
-	returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
-	state = Decimal(returned_state) #string in decimal verwandeln	
+		returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
+		returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
+		state = Decimal(returned_state) #string in decimal verwandeln	
 	
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
 	print 'Status der Heizung:', state
+	print 'Soll die Heizung gesteuert werden?', activate_heater
 	
 	if state == 0:
 		if temp < (settemp - 2):
