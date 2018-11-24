@@ -1,4 +1,6 @@
  <?php
+echo nl2br( file_get_contents('/home/pi/raspberry/log.log') );
+ 
 include '/home/pi/raspberry/log.log';
  ?>
 
