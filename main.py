@@ -8,6 +8,7 @@ import logging
 from decimal import Decimal
 from datetime import datetime
 import requests
+from requests.exceptions import ConnectionError
 
 logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
 
@@ -28,8 +29,14 @@ while count < 1:
 	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 
-	response_heizung = requests.head("http://192.168.2.123")
-	heizungssteuerung_response = response_heizung.status_code
+	try:
+		request = requests.get('http://192.168.2.123')
+		except ConnectionError:
+		heizungssteuerung_response = "Inaktiv"
+	else:
+		heizungssteuerung_response = "Aktiv"
+	
+
 	
 	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
