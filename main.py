@@ -49,7 +49,7 @@ while count < 1:
 			state = Decimal(returned_state) #string in decimal verwandeln	
 			print 'Status der Heizung:', state
 
-
+	print ''
 	print 'Update: ', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 	print 'Soll die Temperatur geloggt werden? ', log_temp
 	print 'Heizungssteuerung antwort: ', response_heizung	
