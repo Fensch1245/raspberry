@@ -16,7 +16,7 @@ echo "<meta http-equiv='refresh' content='0'>";
 if(isset($_POST['update1']))
         {
 $heater = $_POST['heater'];
-shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT set_temp '.escapeshellarg($heater));
+shell_exec('sudo python /home/pi/raspberry/ch_config.py DEFAULT activate_heater '.escapeshellarg($heater));
 echo "<meta http-equiv='refresh' content='0'>";
 }
  ?>
