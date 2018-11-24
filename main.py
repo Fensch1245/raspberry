@@ -5,6 +5,7 @@ import sys
 import time
 import os
 import logging
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 from decimal import Decimal
 from datetime import datetime
 import pyping
