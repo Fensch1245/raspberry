@@ -44,11 +44,11 @@ while count < 1:
 		print 'Status der Heizung:', state
 		
 	print 'Heizungssteuerung antwort: ', response_heizung	
-	print 'Soll die Heizung gesteuert werden?', activate_heater
+	print 'Soll die Heizung gesteuert werden: ', activate_heater
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
 	
-	
+	#Heizungssteuerung
 	if activate_heater <> 0:
 		if state == 0:
 			if temp < (settemp - 2):
