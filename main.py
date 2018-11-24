@@ -30,7 +30,7 @@ while count < 1:
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 	
 #Aus Config auslesen ob Temperatur geloggt werden soll
-	returned_logtemp =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config.py', 'log_temp'])
+	returned_logtemp =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_config_glob.py', 'log_temp'])
 	returned_logtemp = os.linesep.join([s for s in returned_logtemp.splitlines() if s])
 	log_temp = Decimal(returned_logtemp) #string in decimal verwandeln 
 

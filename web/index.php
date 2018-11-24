@@ -41,7 +41,7 @@ echo "<meta http-equiv='refresh' content='0'>";
 	
 	</br></br>
 	<b> Temperatur loggen: </b> </br>
-	<input type="text" name="logtemp" value="<?php echo exec('sudo python /home/pi/raspberry/get_config.py log_temp'); ?>" />
+	<input type="text" name="logtemp" value="<?php echo exec('sudo python /home/pi/raspberry/get_config_glob.py log_temp'); ?>" />
 	<button name = "update2" type="submit">Speichern</button>
 	
 </form>
