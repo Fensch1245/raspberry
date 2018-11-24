@@ -44,7 +44,7 @@ while count < 1:
 		state = Decimal(returned_state) #string in decimal verwandeln	
 		print 'Status der Heizung:', state
 		
-	print 'Heizungssteuerung antwort: ', heizungssteuerung_response	
+	#print 'Heizungssteuerung antwort: ', heizungssteuerung_response	
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
 	print 'Soll die Heizung gesteuert werden?', activate_heater
