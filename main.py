@@ -39,12 +39,8 @@ while count < 1:
 		response_heizung = 1
 	else:
 		response_heizung = 0
-	
-	if activate_heater == 1:
-		if response_heizung == 0:
-			os.system("sudo python /home/pi/raspberry/ch_config.py DEFAULT activate_heater 0")
-			activate_heater = 0
 
+		
 	if activate_heater == 1:
 		if response_heizung == 1:
 # Status der Heizung (Sonoff) auslesen	
@@ -65,24 +61,25 @@ while count < 1:
 		logging.info(temp)
 	
 	#Heizungssteuerung
-	if activate_heater == 1:
-		if state == 0:
-			if temp < (settemp - 2):
-				print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-				logging.info('Heizung aktiviert')
-				os.system("sudo python /home/pi/raspberry/toggle_state.py")
+	if response_heizung == 1:
+		if activate_heater == 1:
+			if state == 0:
+				if temp < (settemp - 2):
+					print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+					logging.info('Heizung aktiviert')
+					os.system("sudo python /home/pi/raspberry/toggle_state.py")
+			else:
+				if temp > (settemp - 2):
+					print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+					logging.info('Heizung deaktiviert')
+					os.system("sudo python /home/pi/raspberry/toggle_state.py")
 		else:
-			if temp > (settemp - 2):
-				print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-				logging.info('Heizung deaktiviert')
-				os.system("sudo python /home/pi/raspberry/toggle_state.py")
-	else:
-		if response_heizung == 1:
-			returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
-			returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
-			state = Decimal(returned_state) #string in decimal verwandeln	
-			if state == 1:
-				os.system("sudo python /home/pi/raspberry/toggle_state.py")
+			if response_heizung == 1:
+				returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
+				returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
+				state = Decimal(returned_state) #string in decimal verwandeln	
+				if state == 1:
+					os.system("sudo python /home/pi/raspberry/toggle_state.py")
 				
 	
 	time.sleep(5)
