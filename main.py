@@ -9,7 +9,7 @@ from decimal import Decimal
 from datetime import datetime
 import requests
 from requests.exceptions import ConnectionError
-
+import pyping
 logging.basicConfig(filename='log.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
 
 count = 0
@@ -29,13 +29,20 @@ while count < 1:
 	returned_activateheater = os.linesep.join([s for s in returned_activateheater.splitlines() if s])
 	activate_heater = Decimal(returned_activateheater) #string in decimal verwandeln 
 
-	hostname = "192.168.2.123" #example
-	response = os.system("sudo ping -c 1 " + hostname)
+	#hostname = "192.168.2.123" #example
+	#response = os.system("sudo ping -c 1 " + hostname)
 
 	# if response == 0:
 		# print hostname, 'is up!'
 	# else:
 		# print hostname, 'is down!'
+	
+	r = pyping.ping('192.168.2.123')
+
+	if r.ret_code == 0:
+		print("Success")
+	else:
+		print("Failed with {}".format(r.ret_code))
 	
 	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
