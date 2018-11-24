@@ -32,10 +32,10 @@ while count < 1:
 	hostname = "192.168.2.123" #example
 	response = os.system("sudo ping -c 1 " + hostname)
 
-	if response == 0:
-		print hostname, 'is up!'
-	else:
-		print hostname, 'is down!'
+	# if response == 0:
+		# print hostname, 'is up!'
+	# else:
+		# print hostname, 'is down!'
 	
 	if activate_heater <> 0:
 # Status der Heizung (Sonoff) auslesen	
