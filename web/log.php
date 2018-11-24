@@ -5,7 +5,7 @@ shell_exec('truncate -s 0 /home/pi/raspberry/log.log');
 }
  ?>
 
-<form>
+<form method="post">
 	<input name ="dellog" type="submit">Logdatei leeren</button>
 </form>
 
