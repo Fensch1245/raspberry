@@ -32,6 +32,11 @@ echo "<meta http-equiv='refresh' content='0'>";
 	<input type="text" name="heater" value="<?php echo exec('sudo python /home/pi/raspberry/get_config_heater.py'); ?>" />
 	<button name = "update1" type="submit">Speichern</button>
 </form>
+
+<form action="http://192.168.2.200/log.php">
+    <input type="submit" value="Log" />
+</form>
+
 </html>
 		 
 		
