@@ -6,7 +6,6 @@
 <form action="http://192.168.2.200">
 	</br>
     <input type="submit" value="Hauptseite" />
-	<button name = "dellog" type="submit">Logdatei leeren</button>
 </form>
 		
  <?php
