@@ -1,15 +1,17 @@
 import sys
 import ConfigParser
 
+eintrag = sys.argv[1]
+
 config = ConfigParser.ConfigParser()
 config.read('/home/pi/raspberry/config.ini')
-result = config.get('DEFAULT', 'set_temp')
+result = config.get('DEFAULT', eintrag)
 
-def set_temp():
+def activate_heater():
 	return result
 
 def main(*argv):
-    print(set_temp())
+    print(activate_heater())
 
 if __name__ == "__main__":
     import sys
