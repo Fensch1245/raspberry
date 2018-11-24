@@ -47,7 +47,7 @@ echo "<meta http-equiv='refresh' content='0'>";
 </form>
 
 <form action="http://192.168.2.200/log.php">
-    <input type="submit" value="Log" />
+    <input type="submit" value="Logveraltung" />
 </form>
 
 </html>
