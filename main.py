@@ -31,7 +31,7 @@ while count < 1:
 
 	try:
 		request = requests.get('http://192.168.2.123')
-		except ConnectionError:
+	except ConnectionError:
 		heizungssteuerung_response = "Inaktiv"
 	else:
 		heizungssteuerung_response = "Aktiv"
