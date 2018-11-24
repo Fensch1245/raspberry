@@ -38,16 +38,17 @@ while count < 1:
 	print 'Eingestellte Temperatur:', settemp	
 	print 'Soll die Heizung gesteuert werden?', activate_heater
 	
-	if state == 0:
-		if temp < (settemp - 2):
-			print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-			logging.info('Heizung aktiviert')
-			os.system("sudo python /home/pi/raspberry/toggle_state.py")
-	else:
-		if temp > (settemp - 2):
-			print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-			logging.info('Heizung deaktiviert')
-			os.system("sudo python /home/pi/raspberry/toggle_state.py")
+	if activate_heater <> 0:
+		if state == 0:
+			if temp < (settemp - 2):
+				print 'Heizung aktiviert', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+				logging.info('Heizung aktiviert')
+				os.system("sudo python /home/pi/raspberry/toggle_state.py")
+		else:
+			if temp > (settemp - 2):
+				print 'Heizung deaktiviert um :', datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+				logging.info('Heizung deaktiviert')
+				os.system("sudo python /home/pi/raspberry/toggle_state.py")
 	
 	time.sleep(5)
 	
