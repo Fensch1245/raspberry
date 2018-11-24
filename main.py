@@ -32,10 +32,10 @@ while count < 1:
 		returned_state =  subprocess.check_output(['sudo', 'python', '/home/pi/raspberry/get_state.py'])
 		returned_state = os.linesep.join([s for s in returned_state.splitlines() if s])
 		state = Decimal(returned_state) #string in decimal verwandeln	
-	
+		print 'Status der Heizung:', state
+		
 	print 'Aktuelle Temperatur:', temp
 	print 'Eingestellte Temperatur:', settemp	
-	print 'Status der Heizung:', state
 	print 'Soll die Heizung gesteuert werden?', activate_heater
 	
 	if state == 0:
