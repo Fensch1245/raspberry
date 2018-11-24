@@ -1,7 +1,7 @@
  <?php
   if(isset($_POST['dellog']))
         {
-echo exec('echo hi');
+exec('sudo truncate -s 0 /home/pi/raspberry/log.log');
 }
  ?>
 
